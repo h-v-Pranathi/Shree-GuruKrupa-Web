@@ -454,6 +454,23 @@ filterButtons.forEach(button => {
 
   });
 });
+// Close navbar on scroll
+window.addEventListener('scroll', () => {
+  const menu = document.getElementById('navMenu');
+  if (menu.classList.contains('show')) {
+    new bootstrap.Collapse(menu).hide();
+  }
+});
+
+// Close navbar on nav link click
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const menu = document.getElementById('navMenu');
+    if (menu.classList.contains('show')) {
+      new bootstrap.Collapse(menu).hide();
+    }
+  });
+});
   </script>
 </body>
 </html>
